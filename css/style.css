@@ -6,7 +6,10 @@
 /* Import Variables  */
 
 @import url(./partials/-variables.css);
-
+*{
+    padding:0;
+    margin:0;
+}
 html{
     scroll-behavior: smooth;
 }
@@ -123,9 +126,14 @@ body{
     display: inline-block;
 }
 .banner h1{
-    font-size:4.5rem;
+    font-size:2.5rem;
     color: var(--primary-color);
-    font-family: 'algerian';
+    font-family: 'roboto';
+}
+@media(min-width:430px){
+    .banner h1{
+        font-size:4.5rem;
+    }
 }
 .banner .salutation{
     font-family: 'robot',cursive;
@@ -184,17 +192,21 @@ body{
 
 
 /* ============  Start About Area   ============ */
-
-
-
-
-
-/* ============  End About Area   ============ */
-
+#about-us .container-fluid{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 #about-us h2{
-    letter-spacing:10px;
-    font-weight:700;
+    letter-spacing:1px;
+    font-weight:500;
     font-family:'roboto',cursive;
+}
+@media (min-width:576px){
+    #about-us h2{
+        letter-spacing:10px;
+    }
 }
 #about-us .btn{
     background: var(--gradient-color);
@@ -210,6 +222,8 @@ body{
    cursor:url(../vendor/cursors/cur117.cur), pointer;
 }
 
+
+/* ============  End About Area   ============ */`
 /* ========== Brand Section Start ============ */
 
 #brand .container{
@@ -330,7 +344,7 @@ body{
 #services p.lead{
     color:#fff;
 }
-#services .container::after{
+#services .container-fluid::after{
     content:'';
     position: absolute;
     top:0;
@@ -343,17 +357,22 @@ body{
 }
 
 #services .cards{
+    width:100%;
     display:flex;
     justify-content:center;
-    align-items:space-evenly;
+    align-items:center !important;
     flex-wrap:wrap;
-    padding-bottom: 100px;;
+    padding-bottom: 50px;;
 }
 #services .card{
-    margin: auto;
+    margin: 10px 10px;
     width:200px;
     height: 300px;
     transition:.3s;
+}
+#services .col{
+    flex-grow: 0 !important;
+
 }
 #services .card:hover{
     transform:scale(1.02);
@@ -370,16 +389,18 @@ body{
 #project-area{
     padding:1rem 0;
 }
-
+#project-area .button-group{
+}
 #project-area .button-group button{
     text-transform: uppercase;
     font-size:16px;
     border:1px solid #f1f1f1;
-    margin:10px 0;
-
+    margin:5px 0;
 }
-#project-area .button-group button + button{
-    margin-left:30px;
+@media(min-width:768px){
+    #project-area .button-group button + button{
+        margin-left:30px;
+    }
 }
 #project-area .button-group button:hover{
     box-shadow:0 0 20px 0px #f1f1f1;
@@ -455,6 +476,9 @@ body{
 }
 #testimonial .owl-carousel .review small{
     margin: 0;
+    font-size:12px;
+    text-align:left;
+    margin-right:20px;
 }
 
 /* ============== End Testimonial Section ============== */
